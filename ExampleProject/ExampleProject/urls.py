@@ -20,4 +20,5 @@ from django.urls import path, include
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("vsmaster/", include("vintagestory_masterserver.urls")),  # VintageStory Masterserver replacement
+    path("", include("core.urls"))
 ]

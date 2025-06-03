@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'vintagestory_masterserver'
+    'vintagestory_masterserver',
+    'core'
 ]
 
 MIDDLEWARE = [

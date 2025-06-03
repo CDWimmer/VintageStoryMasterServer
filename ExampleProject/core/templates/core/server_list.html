@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>VS Server List</title>
+</head>
+<body>
+<h1>VS Server List</h1>
+<p>There are {{ num_players }} player{{ num_players|pluralize }} playing on {{ num_servers }} server{{ num_servers|pluralize }}!</p>
+    <ul>
+        {% for server in servers %}
+        <li><a href="vintagestoryjoin://{{ server.address }}:{{ server.port }}">{{ server.vs_server_name }}</a></li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
