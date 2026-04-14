@@ -60,7 +60,7 @@ class VSServer(models.Model):
     play_style_id = models.CharField(max_length=64)
     play_style_lang_code = models.CharField(max_length=64)
     is_whitelisted = models.BooleanField()
-    description = models.TextField()
+    description = models.TextField(null=True)
     max_players = models.SmallIntegerField()
     game_version = models.CharField(max_length=64)
     has_password = models.BooleanField()
