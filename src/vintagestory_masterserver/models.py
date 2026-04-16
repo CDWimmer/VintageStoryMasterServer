@@ -24,7 +24,7 @@ class VSServerData(TypedDict):
     hasPassword: bool
     Mods: List[VSmodData]
     serverUrl: str | None
-    gameDescription: str
+    gameDescription: str | None
     whitelisted: bool
 
 
@@ -60,11 +60,11 @@ class VSServer(models.Model):
     play_style_id = models.CharField(max_length=64)
     play_style_lang_code = models.CharField(max_length=64)
     is_whitelisted = models.BooleanField()
-    description = models.TextField(null=True)
+    description = models.TextField(null=True, blank=True)
     max_players = models.SmallIntegerField()
     game_version = models.CharField(max_length=64)
     has_password = models.BooleanField()
-    server_url = models.CharField(max_length=256, null=True)
+    server_url = models.CharField(max_length=256, null=True, blank=True)
     last_heartbeat = models.DateTimeField(auto_now_add=True)
     players = models.SmallIntegerField(default=0)
 

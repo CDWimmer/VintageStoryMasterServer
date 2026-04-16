@@ -1,3 +1,4 @@
+import datetime
 import json
 from django.http import JsonResponse
 from django.utils import timezone
@@ -59,7 +60,7 @@ class VSMasterUnregister(CSRFExemptMixin, View):
 class VSMasterList(CSRFExemptMixin, View):
     def get(self, request):
         # got only servers that have provided a heartbeat recently.
-        servers = VSServer.objects.filter(last_heartbeat__gte=timezone.now()-timezone.timedelta(minutes=6))
+        servers = VSServer.objects.filter(last_heartbeat__gte=timezone.now()-datetime.timedelta(minutes=6))
         server_list = [server.as_dict() for server in servers]
         return JsonResponse(
             {
